@@ -318,8 +318,8 @@
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
-          <variable_name>path</variable_name>
-          <variable_value>/home/pradel/Documents</variable_value>
+          <variable_name>PATH</variable_name>
+          <variable_value>/home/pradel/Documents/</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>

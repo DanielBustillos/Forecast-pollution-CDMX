@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>files</name>
+    <name>dates</name>
     <description />
     <extended_description />
     <trans_version />
@@ -427,233 +427,16 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2019/04/11 17:23:41.997</created_date>
+    <created_date>2019/04/12 12:02:26.147</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2019/04/11 17:23:41.997</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2019/04/12 12:02:26.147</modified_date>
+    <key_for_session_key />
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <order>
-    <hop>
-      <from>Data grid</from>
-      <to>Copy rows to result</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
-  <step>
-    <name>Copy rows to result</name>
-    <type>RowsToResult</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>320</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Data grid</name>
-    <type>DataGrid</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>filename</name>
-        <type>string</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>url</name>
-        <type>string</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <data>
-      <line>
-        <item>contaminantes_2019.csv</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios/contaminantes_2019.csv</item>
-      </line>
-      <line>
-        <item>contaminantes_2018.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2018.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2017.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2017.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2016.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2016.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2015.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2015.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2014.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2014.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2013.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2013.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2012.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2012.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2011.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2011.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2010.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2010.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2009.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2009.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2008.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2008.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2007.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2007.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2006.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2006.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2005.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2005.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2004.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2004.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2003.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2003.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2002.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2002.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2001.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2001.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_2000.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_2000.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1999.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1999.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1998.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1998.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1997.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1997.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1996.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1996.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1995.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1995.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1994.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1994.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1993.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1993.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1992.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1992.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1991.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1991.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1990.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1990.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1989.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1989.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1988.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1988.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1987.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1987.csv.gz</item>
-      </line>
-      <line>
-        <item>contaminantes_1986.csv.gz</item>
-        <item>http://148.243.232.112:8080/opendata/anuales_horarios_gz/contaminantes_1986.csv.gz</item>
-      </line>
-    </data>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>208</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

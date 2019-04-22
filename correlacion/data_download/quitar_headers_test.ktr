@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>quitar_headers</name>
+    <name>quitar_headers_test</name>
     <description />
     <extended_description />
     <trans_version />
@@ -462,11 +462,6 @@
       <to>Add sequence</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>Row flattener</from>
-      <to>Text file output</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
   <step>
     <name>Add sequence</name>
@@ -695,7 +690,7 @@
     <length>Characters</length>
     <add_to_result_filenames>N</add_to_result_filenames>
     <file>
-      <name>${filename}</name>
+      <name>/home/pradel/Desktop/Forecast_CDMX_pollution/correlacion/contaminantes_2019.csv</name>
       <filemask />
       <exclude_filemask />
       <file_required>N</file_required>
@@ -758,63 +753,6 @@
     <GUI>
       <xloc>176</xloc>
       <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Text file output</name>
-    <type>TextFileOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <separator>,</separator>
-    <enclosure>"</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>Y</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding />
-    <endedLine />
-    <fileNameInField>N</fileNameInField>
-    <fileNameField />
-    <create_parent_folder>N</create_parent_folder>
-    <file>
-      <name>${filename}</name>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>csv</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery />
-    </file>
-    <fields>
-    </fields>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>592</xloc>
-      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

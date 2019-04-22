@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>main</name>
+  <name>obtener_meteorologicos_main</name>
   <description />
   <extended_description />
   <job_version />
@@ -320,14 +320,14 @@
       <fields>
         <field>
           <variable_name>PATH</variable_name>
-          <variable_value>${Internal.Entry.Current.Directory}/contaminantes/</variable_value>
+          <variable_value>${Internal.Entry.Current.Directory}/raw_metereologicos/</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
+      <xloc>320</xloc>
       <yloc>64</yloc>
       <attributes_kjc />
     </entry>
@@ -338,7 +338,7 @@
       <attributes />
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>${Internal.Entry.Current.Directory}/files.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/nombres_archivos_meteorologia.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -365,7 +365,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
+      <xloc>448</xloc>
       <yloc>64</yloc>
       <attributes_kjc />
     </entry>
@@ -376,7 +376,7 @@
       <attributes />
       <specification_method>filename</specification_method>
       <job_object_id />
-      <filename>${Internal.Entry.Current.Directory}/download.kjb</filename>
+      <filename>${Internal.Entry.Current.Directory}/bajar_archivos_metereologia.kjb</filename>
       <jobname />
       <directory />
       <arg_from_previous>N</arg_from_previous>
@@ -412,7 +412,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
+      <xloc>640</xloc>
       <yloc>64</yloc>
       <attributes_kjc />
     </entry>
@@ -424,21 +424,21 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
+      <xloc>784</xloc>
       <yloc>64</yloc>
       <attributes_kjc />
     </entry>
     <entry>
-      <name>crear folder contaminantes</name>
+      <name>crear folder raw</name>
       <description />
       <type>CREATE_FOLDER</type>
       <attributes />
-      <foldername>${Internal.Entry.Current.Directory}/contaminantes/</foldername>
+      <foldername>${Internal.Entry.Current.Directory}/raw_metereologicos/</foldername>
       <fail_of_folder_exists>Y</fail_of_folder_exists>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
+      <xloc>192</xloc>
       <yloc>64</yloc>
       <attributes_kjc />
     </entry>
@@ -473,7 +473,7 @@
     </hop>
     <hop>
       <from>Start</from>
-      <to>crear folder contaminantes</to>
+      <to>crear folder raw</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -481,7 +481,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>crear folder contaminantes</from>
+      <from>crear folder raw</from>
       <to>path</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

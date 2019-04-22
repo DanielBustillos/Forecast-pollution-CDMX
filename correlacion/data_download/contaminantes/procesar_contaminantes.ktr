@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>quitar_headers</name>
+    <name>procesar_contaminantes</name>
     <description />
     <extended_description />
     <trans_version />
@@ -671,7 +671,7 @@
     <passing_through_fields>N</passing_through_fields>
     <accept_field />
     <accept_stepname />
-    <separator>;</separator>
+    <separator>,</separator>
     <enclosure>"</enclosure>
     <enclosure_breaks>N</enclosure_breaks>
     <escapechar />
@@ -695,7 +695,7 @@
     <length>Characters</length>
     <add_to_result_filenames>N</add_to_result_filenames>
     <file>
-      <name>${filename}</name>
+      <name>${nombrearchivo}</name>
       <filemask />
       <exclude_filemask />
       <file_required>N</file_required>
@@ -786,23 +786,83 @@
     <fileNameField />
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>${filename}</name>
+      <name>${nombrearchivo}</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>csv</extention>
+      <extention />
       <append>N</append>
       <split>N</split>
       <haspartno>N</haspartno>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format>yyyy-MM-dd HH:mm:ss</date_time_format>
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
       <splitevery />
     </file>
     <fields>
+      <field>
+        <name>fecha</name>
+        <type>Date</type>
+        <format>yyyy-MM-dd HH:mm:ss</format>
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>id_estacion</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>id_parametro</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>valor</name>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>unidad</name>
+        <type>Integer</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
     </fields>
     <attributes />
     <cluster_schema />
@@ -814,7 +874,7 @@
     </remotesteps>
     <GUI>
       <xloc>592</xloc>
-      <yloc>304</yloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

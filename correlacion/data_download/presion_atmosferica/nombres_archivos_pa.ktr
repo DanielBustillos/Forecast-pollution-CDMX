@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>quitar_headers</name>
+    <name>nombres_archivos_pa</name>
     <description />
     <extended_description />
     <trans_version />
@@ -428,9 +428,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2019/04/17 14:36:24.280</created_date>
+    <created_date>2019/04/11 17:23:41.997</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2019/04/17 14:36:24.280</modified_date>
+    <modified_date>2019/04/11 17:23:41.997</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -438,39 +438,14 @@
   </notepads>
   <order>
     <hop>
-      <from>Add sequence</from>
-      <to>Filter rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows</from>
-      <to>Split field to rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Split field to rows</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values</from>
-      <to>Row flattener</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Text file input</from>
-      <to>Add sequence</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Row flattener</from>
-      <to>Text file output</to>
+      <from>Data grid</from>
+      <to>Copy rows to result</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Add sequence</name>
-    <type>Sequence</type>
+    <name>Copy rows to result</name>
+    <type>RowsToResult</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -479,16 +454,6 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <valuename>metadata</valuename>
-    <use_database>N</use_database>
-    <connection />
-    <schema />
-    <seqname>SEQ_</seqname>
-    <use_counter>Y</use_counter>
-    <counter_name />
-    <start_at>1</start_at>
-    <increment_by>1</increment_by>
-    <max_value>25000000</max_value>
     <attributes />
     <cluster_schema />
     <remotesteps>
@@ -498,101 +463,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>64</yloc>
+      <xloc>320</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <send_true_to />
-    <send_false_to />
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>metadata</leftvalue>
-        <function>&gt;</function>
-        <rightvalue />
-        <value>
-          <name>constant</name>
-          <type>Integer</type>
-          <text>11</text>
-          <length>-1</length>
-          <precision>0</precision>
-          <isnull>N</isnull>
-          <mask>####0;-####0</mask>
-        </value>
-      </condition>
-    </compare>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>400</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Row flattener</name>
-    <type>Flattener</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <field_name>new</field_name>
-    <fields>
-      <field>
-        <name>fecha</name>
-      </field>
-      <field>
-        <name>id_estacion</name>
-      </field>
-      <field>
-        <name>id_parametro</name>
-      </field>
-      <field>
-        <name>valor</name>
-      </field>
-      <field>
-        <name>unidad</name>
-      </field>
-    </fields>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>592</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
+    <name>Data grid</name>
+    <type>DataGrid</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -602,151 +480,75 @@
       <schema_name />
     </partitioning>
     <fields>
-      <select_unspecified>N</select_unspecified>
-      <remove>
-        <name>Field_000</name>
-      </remove>
-      <remove>
-        <name>metadata</name>
-      </remove>
-    </fields>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>496</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Split field to rows</name>
-    <type>SplitFieldToRows3</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <splitfield>Field_000</splitfield>
-    <delimiter>,</delimiter>
-    <newfield>new</newfield>
-    <rownum>N</rownum>
-    <rownum_field>id</rownum_field>
-    <resetrownumber>Y</resetrownumber>
-    <delimiter_is_regex>N</delimiter_is_regex>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>496</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Text file input</name>
-    <type>TextFileInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <accept_filenames>N</accept_filenames>
-    <passing_through_fields>N</passing_through_fields>
-    <accept_field />
-    <accept_stepname />
-    <separator>;</separator>
-    <enclosure>"</enclosure>
-    <enclosure_breaks>N</enclosure_breaks>
-    <escapechar />
-    <header>N</header>
-    <nr_headerlines>1</nr_headerlines>
-    <footer>N</footer>
-    <nr_footerlines>1</nr_footerlines>
-    <line_wrapped>N</line_wrapped>
-    <nr_wraps>1</nr_wraps>
-    <layout_paged>N</layout_paged>
-    <nr_lines_per_page>80</nr_lines_per_page>
-    <nr_lines_doc_header>0</nr_lines_doc_header>
-    <noempty>Y</noempty>
-    <include>N</include>
-    <include_field />
-    <rownum>N</rownum>
-    <rownumByFile>N</rownumByFile>
-    <rownum_field />
-    <format>DOS</format>
-    <encoding />
-    <length>Characters</length>
-    <add_to_result_filenames>N</add_to_result_filenames>
-    <file>
-      <name>${filename}</name>
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <type>CSV</type>
-      <compression>None</compression>
-    </file>
-    <filters>
-    </filters>
-    <fields>
       <field>
-        <name>Field_000</name>
-        <type>String</type>
+        <name>filename</name>
+        <type>string</type>
         <format />
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull />
-        <position>-1</position>
-        <length>39</length>
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>url</name>
+        <type>string</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <limit>0</limit>
-    <error_ignored>N</error_ignored>
-    <skip_bad_files>N</skip_bad_files>
-    <file_error_field />
-    <file_error_message_field />
-    <error_line_skipped>N</error_line_skipped>
-    <error_count_field />
-    <error_fields_field />
-    <error_text_field />
-    <bad_line_files_destination_directory />
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory />
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory />
-    <line_number_files_extension>line</line_number_files_extension>
-    <date_format_lenient>Y</date_format_lenient>
-    <date_format_locale>en_US</date_format_locale>
-    <shortFileFieldName />
-    <pathFieldName />
-    <hiddenFieldName />
-    <lastModificationTimeFieldName />
-    <uriNameFieldName />
-    <rootUriNameFieldName />
-    <extensionFieldName />
-    <sizeFieldName />
+    <data>
+      <line>
+        <item>pa_2019.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2019.csv</item>
+      </line>
+      <line>
+        <item>pa_2018.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2018.csv</item>
+      </line>
+      <line>
+        <item>pa_2017.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2017.csv</item>
+      </line>
+      <line>
+        <item>pa_2016.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2016.csv</item>
+      </line>
+      <line>
+        <item>pa_2015.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2015.csv</item>
+      </line>
+      <line>
+        <item>pa_2014.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2014.csv</item>
+      </line>
+      <line>
+        <item>pa_2013.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2013.csv</item>
+      </line>
+      <line>
+        <item>pa_2012.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2012.csv</item>
+      </line>
+      <line>
+        <item>pa_2011.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2011.csv</item>
+      </line>
+      <line>
+        <item>pa_2010.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2010.csv</item>
+      </line>
+      <line>
+        <item>pa_2009.csv</item>
+        <item>http://148.243.232.112:8080/opendata/presion/PA_2009.csv</item>
+      </line>
+    </data>
     <attributes />
     <cluster_schema />
     <remotesteps>
@@ -756,65 +558,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Text file output</name>
-    <type>TextFileOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <separator>,</separator>
-    <enclosure>"</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>Y</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding />
-    <endedLine />
-    <fileNameInField>N</fileNameInField>
-    <fileNameField />
-    <create_parent_folder>N</create_parent_folder>
-    <file>
-      <name>${filename}</name>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>csv</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery />
-    </file>
-    <fields>
-    </fields>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>592</xloc>
-      <yloc>304</yloc>
+      <xloc>192</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

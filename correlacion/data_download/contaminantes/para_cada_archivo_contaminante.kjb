@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>main</name>
+  <name>para_cada_archivo_contaminante</name>
   <description />
   <extended_description />
   <job_version />
   <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
-  <created_date>2019/04/11 16:28:10.663</created_date>
+  <created_date>2010/03/19 11:25:36.797</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2019/04/11 16:28:10.663</modified_date>
+  <modified_date>2010/03/19 11:25:36.797</modified_date>
   <parameters>
     </parameters>
   <slaveservers>
@@ -28,7 +28,7 @@
     </field>
     <field>
       <id>CHANNEL_ID</id>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <name>CHANNEL_ID</name>
     </field>
     <field>
@@ -68,7 +68,7 @@
     </field>
     <field>
       <id>LINES_REJECTED</id>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <name>LINES_REJECTED</name>
     </field>
     <field>
@@ -288,8 +288,8 @@
   <shared_objects_file />
   <entries>
     <entry>
-      <name>Start</name>
-      <description />
+      <name>START</name>
+      <description>Special entries</description>
       <type>SPECIAL</type>
       <attributes />
       <start>Y</start>
@@ -305,40 +305,18 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>48</xloc>
+      <xloc>32</xloc>
       <yloc>64</yloc>
       <attributes_kjc />
     </entry>
     <entry>
-      <name>path</name>
-      <description />
-      <type>SET_VARIABLES</type>
-      <attributes />
-      <replacevars>Y</replacevars>
-      <filename />
-      <file_variable_type>JVM</file_variable_type>
-      <fields>
-        <field>
-          <variable_name>PATH</variable_name>
-          <variable_value>${Internal.Entry.Current.Directory}/contaminantes/</variable_value>
-          <variable_type>CURRENT_JOB</variable_type>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>256</xloc>
-      <yloc>64</yloc>
-      <attributes_kjc />
-    </entry>
-    <entry>
-      <name>files</name>
-      <description />
+      <name>set-var</name>
+      <description>Transformation</description>
       <type>TRANS</type>
       <attributes />
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>${Internal.Entry.Current.Directory}/files.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/fijar_variable_contaminante.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -350,7 +328,7 @@
       <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
+      <loglevel>Nothing</loglevel>
       <cluster>N</cluster>
       <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
@@ -365,23 +343,23 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
+      <xloc>288</xloc>
       <yloc>64</yloc>
       <attributes_kjc />
     </entry>
     <entry>
-      <name>download</name>
-      <description />
+      <name>do-stuff</name>
+      <description>Job</description>
       <type>JOB</type>
       <attributes />
       <specification_method>filename</specification_method>
       <job_object_id />
-      <filename>${Internal.Entry.Current.Directory}/download.kjb</filename>
+      <filename>${Internal.Entry.Current.Directory}/hacer_cosas_contaminantes.kjb</filename>
       <jobname />
       <directory />
       <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>Y</params_from_previous>
-      <exec_per_row>Y</exec_per_row>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
       <logfile />
       <logext />
@@ -397,83 +375,58 @@
       <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
-        <parameter>
-          <name>URL</name>
-          <stream_name>url</stream_name>
-          <value />
-        </parameter>
-        <parameter>
-          <name>FILENAME</name>
-          <stream_name>filename</stream_name>
-          <value />
-        </parameter>
       </parameters>
       <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
+      <xloc>560</xloc>
       <yloc>64</yloc>
       <attributes_kjc />
     </entry>
     <entry>
-      <name>Success</name>
-      <description />
+      <name>set-var-fail</name>
+      <description>Abort job</description>
+      <type>ABORT</type>
+      <attributes />
+      <message>Failed to set variable</message>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>288</xloc>
+      <yloc>240</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Success 1</name>
+      <description>Success</description>
       <type>SUCCESS</type>
       <attributes />
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
+      <xloc>832</xloc>
       <yloc>64</yloc>
       <attributes_kjc />
     </entry>
     <entry>
-      <name>crear folder contaminantes</name>
-      <description />
-      <type>CREATE_FOLDER</type>
+      <name>do-stuff-fail</name>
+      <description>Abort job</description>
+      <type>ABORT</type>
       <attributes />
-      <foldername>${Internal.Entry.Current.Directory}/contaminantes/</foldername>
-      <fail_of_folder_exists>Y</fail_of_folder_exists>
+      <message>Failed to do stuff :(</message>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>64</yloc>
+      <xloc>560</xloc>
+      <yloc>240</yloc>
       <attributes_kjc />
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>path</from>
-      <to>files</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>files</from>
-      <to>download</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>download</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Start</from>
-      <to>crear folder contaminantes</to>
+      <from>START</from>
+      <to>set-var</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -481,13 +434,40 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>crear folder contaminantes</from>
-      <to>path</to>
+      <from>set-var</from>
+      <to>do-stuff</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>set-var</from>
+      <to>set-var-fail</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>do-stuff</from>
+      <to>Success 1</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>do-stuff</from>
+      <to>do-stuff-fail</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

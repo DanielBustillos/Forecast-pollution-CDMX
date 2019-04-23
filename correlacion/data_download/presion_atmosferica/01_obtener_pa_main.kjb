@@ -338,7 +338,7 @@
       <attributes />
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>${Internal.Entry.Current.Directory}/nombres_archivos_pa.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/01_nombres_archivos_pa.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -376,7 +376,7 @@
       <attributes />
       <specification_method>filename</specification_method>
       <job_object_id />
-      <filename>${Internal.Entry.Current.Directory}/bajar_archivos_pa.kjb</filename>
+      <filename>${Internal.Entry.Current.Directory}/01_bajar_archivos_pa.kjb</filename>
       <jobname />
       <directory />
       <arg_from_previous>N</arg_from_previous>

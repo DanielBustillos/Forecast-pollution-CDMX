@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>02_copiar_archivos_pa</name>
+  <name>02_main_limpiar_pa</name>
   <description />
   <extended_description />
   <job_version />
   <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
-  <created_date>2019/04/22 17:53:20.440</created_date>
+  <created_date>2010/03/19 11:09:42.765</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2019/04/22 17:53:20.440</modified_date>
+  <modified_date>2010/03/19 11:09:42.765</modified_date>
   <parameters>
     </parameters>
   <slaveservers>
@@ -28,7 +28,7 @@
     </field>
     <field>
       <id>CHANNEL_ID</id>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <name>CHANNEL_ID</name>
     </field>
     <field>
@@ -68,7 +68,7 @@
     </field>
     <field>
       <id>LINES_REJECTED</id>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <name>LINES_REJECTED</name>
     </field>
     <field>
@@ -288,8 +288,8 @@
   <shared_objects_file />
   <entries>
     <entry>
-      <name>Start</name>
-      <description />
+      <name>START</name>
+      <description>Special entries</description>
       <type>SPECIAL</type>
       <attributes />
       <start>Y</start>
@@ -305,58 +305,211 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>144</xloc>
-      <yloc>96</yloc>
+      <xloc>14</xloc>
+      <yloc>83</yloc>
       <attributes_kjc />
     </entry>
     <entry>
-      <name>crear clean</name>
-      <description />
-      <type>CREATE_FOLDER</type>
+      <name>read-file-names</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
       <attributes />
-      <foldername>${Internal.Entry.Current.Directory}/clean_presion_atmosferica</foldername>
-      <fail_of_folder_exists>N</fail_of_folder_exists>
+      <specification_method>filename</specification_method>
+      <trans_object_id />
+      <filename>${Internal.Entry.Current.Directory}/03_leer_archivos_pa.ktr</filename>
+      <transname />
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile />
+      <logext />
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name />
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
-      <yloc>32</yloc>
+      <xloc>307</xloc>
+      <yloc>82</yloc>
       <attributes_kjc />
     </entry>
     <entry>
-      <name>Copy files</name>
-      <description />
-      <type>COPY_FILES</type>
+      <name>foreach</name>
+      <description>Job</description>
+      <type>JOB</type>
       <attributes />
-      <copy_empty_folders>N</copy_empty_folders>
+      <specification_method>filename</specification_method>
+      <job_object_id />
+      <filename>${Internal.Entry.Current.Directory}/03_para_cada_pa.kjb</filename>
+      <jobname />
+      <directory />
       <arg_from_previous>N</arg_from_previous>
-      <overwrite_files>N</overwrite_files>
-      <include_subfolders>N</include_subfolders>
-      <remove_source_files>N</remove_source_files>
-      <add_result_filesname>N</add_result_filesname>
-      <destination_is_a_file>N</destination_is_a_file>
-      <create_destination_folder>N</create_destination_folder>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>Y</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile />
+      <logext />
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name />
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <run_configuration />
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>416</xloc>
+      <yloc>80</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Fail1</name>
+      <description>Abort job</description>
+      <type>ABORT</type>
+      <attributes />
+      <message>Fail 1</message>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>307</xloc>
+      <yloc>184</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Fail2</name>
+      <description>Abort job</description>
+      <type>ABORT</type>
+      <attributes />
+      <message>Fail 2</message>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>415</xloc>
+      <yloc>184</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Success 1</name>
+      <description>Success</description>
+      <type>SUCCESS</type>
+      <attributes />
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>538</xloc>
+      <yloc>83</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Set Dir Path</name>
+      <description>Set variables</description>
+      <type>SET_VARIABLES</type>
+      <attributes />
+      <replacevars>N</replacevars>
+      <filename />
+      <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
-          <source_filefolder>EMPTY_SOURCE_URL-0-file:///home/pradel/Desktop/Forecast_CDMX_pollution/correlacion/data_download/presion_atmosferica/raw_presion_atmosferica/</source_filefolder>
-          <source_configuration_name>STATIC-SOURCE-FILE-0</source_configuration_name>
-          <destination_filefolder>EMPTY_DEST_URL-0-file:///home/pradel/Desktop/Forecast_CDMX_pollution/correlacion/data_download/presion_atmosferica/clean_presion_atmosferica/</destination_filefolder>
-          <destination_configuration_name>LOCAL-DEST-FILE-0</destination_configuration_name>
-          <wildcard />
+          <variable_name>dir.path</variable_name>
+          <variable_value>${Internal.Entry.Current.Directory}/raw_presion_atmosferica/</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>dir.wildcard</variable_name>
+          <variable_value>.*\.csv</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>filename</variable_name>
+          <variable_value>invalid</variable_value>
+          <variable_type>JVM</variable_type>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>96</yloc>
+      <xloc>112</xloc>
+      <yloc>80</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Write To Log 1</name>
+      <description>Write To Log</description>
+      <type>WRITE_TO_LOG</type>
+      <attributes />
+      <logmessage />
+      <loglevel>Minimal</loglevel>
+      <logsubject>Looking for files in ${dir.path} using  ${dir.wildcard} wildcard</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>207</xloc>
+      <yloc>81</yloc>
       <attributes_kjc />
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>Start</from>
-      <to>crear clean</to>
+      <from>read-file-names</from>
+      <to>foreach</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>read-file-names</from>
+      <to>Fail1</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>foreach</from>
+      <to>Fail2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>foreach</from>
+      <to>Success 1</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Set Dir Path</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -364,8 +517,17 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>crear clean</from>
-      <to>Copy files</to>
+      <from>Set Dir Path</from>
+      <to>Write To Log 1</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Write To Log 1</from>
+      <to>read-file-names</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

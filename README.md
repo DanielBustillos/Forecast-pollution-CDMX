@@ -23,10 +23,10 @@ Para el Ozono:
 
 ### Ruta Crítica 
 
-Añadir un modelo del pronóstico para PM2.5, este parece ser un mejor indicador de la contaminación urbana que las que se venían utilizando hasta ahora, las PM10.
+ - Añadir un modelo del pronóstico para PM2.5, este parece ser un mejor indicador de la contaminación urbana que las que se venían utilizando hasta ahora, las PM10.
 
-Disminuir el error y mejorar los modelos mostrados.
+ - Disminuir el error y mejorar los modelos mostrados.
 
-Enriquecer la plataforma web con el modelo de PM10 y PM2.5 así como añadir más visualizaciones interactivas.
+ - Enriquecer la plataforma web con el modelo de PM10 y PM2.5 así como añadir más visualizaciones interactivas.
 
-Mejorar el modelo usando otras variables no consideradas, por ejemplo, los incendios forestales o la emisión de ceniza volcánica.
+ - Mejorar el modelo usando otras variables no consideradas, por ejemplo, los incendios forestales o la emisión de ceniza volcánica.

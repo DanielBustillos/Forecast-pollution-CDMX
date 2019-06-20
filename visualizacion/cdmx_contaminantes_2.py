@@ -40,9 +40,9 @@ def crear_trazo(df, y, color, x='horas', width=2):
 
 
 # Listas que construyen las líneas correspondientes a cada gráfica
-data_o3 = [crear_trazo(df_o3, col, dic_colores[col]) for col in df_o3.columns[1:]]
-data_pm25 = [crear_trazo(df_pm25, col, dic_colores[col]) for col in df_pm25.columns[1:]]
-data_pm10 = [crear_trazo(df_pm10, col, dic_colores[col]) for col in df_pm10.columns[1:]]
+# data_o3 = [crear_trazo(df_o3, col, dic_colores[col]) for col in df_o3.columns[1:]]
+# data_pm25 = [crear_trazo(df_pm25, col, dic_colores[col]) for col in df_pm25.columns[1:]]
+# data_pm10 = [crear_trazo(df_pm10, col, dic_colores[col]) for col in df_pm10.columns[1:]]
 
 # Se crea la app de Dash
 app = dash.Dash()
@@ -66,23 +66,23 @@ app.layout = html.Div([html.Div([html.H1('Correlaciones importantes entre contam
                                                 'margin': '0%'})]),
                        dcc.Dropdown(id='elegir_contaminante', options=opciones_contaminante, value='UVA'),
                        dcc.Graph(id='correlaciones_o3'),
-                              #   figure={'data': data_o3,
-                              #           'layout': go.Layout(title='Correlaciones de O3 con otros contaminantes',
-                              #                               xaxis={'title': 'Horas'},
-                              #                               yaxis={'title': 'Correlación'}
-                              #                               )}),
-                       dcc.Graph(id='correlaciones_pm25',
-                                 figure={'data': data_pm25,
-                                         'layout': go.Layout(title='Correlaciones de PM2.5 con otros contaminantes',
-                                                             xaxis={'title': 'Horas'},
-                                                             yaxis={'title': 'Correlación'}
-                                                             )}),
-                       dcc.Graph(id='correlaciones_pm10',
-                                 figure={'data': data_pm10,
-                                         'layout': go.Layout(title='Correlaciones de PM10 con otros contaminantes',
-                                                             xaxis={'title': 'Horas'},
-                                                             yaxis={'title': 'Correlación'}
-                                                             )}),
+                                 # figure={'data': data_o3,
+                                 #         'layout': go.Layout(title='Correlaciones de O3 con otros contaminantes',
+                                 #                             xaxis={'title': 'Horas'},
+                                 #                             yaxis={'title': 'Correlación'}
+                                 #                             )}),
+                       dcc.Graph(id='correlaciones_pm25'),
+                                 # figure={'data': data_pm25,
+                                 #         'layout': go.Layout(title='Correlaciones de PM2.5 con otros contaminantes',
+                                 #                             xaxis={'title': 'Horas'},
+                                 #                             yaxis={'title': 'Correlación'}
+                                 #                             )}),
+                       dcc.Graph(id='correlaciones_pm10'),
+                                 # figure={'data': data_pm10,
+                                 #         'layout': go.Layout(title='Correlaciones de PM10 con otros contaminantes',
+                                 #                             xaxis={'title': 'Horas'},
+                                 #                             yaxis={'title': 'Correlación'}
+                                 #                             )}),
                        html.Div(html.P('* Los resultados aquí mostrados son parte de un estudio de la calidad del '
                                        'aire de la Ciudad de México. Se muestran las correlaciones desde las 0 '
                                        'hasta las 72 horas de los tres contaminantes considerados para '
@@ -96,8 +96,13 @@ app.layout = html.Div([html.Div([html.H1('Correlaciones importantes entre contam
 @app.callback(Output('correlaciones_o3', 'figure'),
               [Input('elegir_contaminante', 'value')])
 def actualizar(opciones_contaminante):
-    df_o3_filtro = df_o3[opciones_contaminante]
-    data_o3_filtro = [crear_trazo(df_o3, col, dic_colores[col]) for col in df_o3_filtro.columns]
+    df_o3_filtro = df_o3[[opciones_contaminante]]
+    # df_pm25_filtro = df_pm25[[opciones_contaminante]]
+    # df_pm10_filtro = df_pm10[[opciones_contaminante]]
+
+    data_o3 = [crear_trazo(df_o3, col, dic_colores[col]) for col in df_o3_filtro.columns]
+    # data_pm25 = [crear_trazo(df_pm25, col, dic_colores[col]) for col in df_pm25_filtro.columns]
+    # data_pm10 = [crear_trazo(df_pm10, col, dic_colores[col]) for col in df_pm10_filtro.columns]
     return {'data': data_o3_filtro,
             'layout': go.Layout(title='Correlaciones de O3 con otros contaminantes',
                                                              xaxis={'title': 'Horas'},

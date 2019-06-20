@@ -96,7 +96,7 @@ app.layout = html.Div([html.Div([html.H1('Correlaciones importantes entre contam
 @app.callback(Output('correlaciones_o3', 'figure'),
               [Input('elegir_contaminante', 'value')])
 def actualizar(opciones_contaminante):
-    df_o3_filtro = df_o3[opciones_contaminante]
+    df_o3_filtro = df_o3[[opciones_contaminante]]
     data_o3_filtro = [crear_trazo(df_o3, col, dic_colores[col]) for col in df_o3_filtro.columns]
     return {'data': data_o3_filtro,
             'layout': go.Layout(title='Correlaciones de O3 con otros contaminantes',

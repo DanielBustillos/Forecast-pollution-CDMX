@@ -16,11 +16,11 @@ dic_colores = {'UVA': '#543005'
                , 'UVB': '#8c510a'
                , 'PA': '#bf812d'
                , 'CO': '#dfc27d'
-               , 'NO': '#a50026'
+               , 'NO': '#fee090'
                , 'NO2': '#d73027'
                , 'NOX': '#f46d43'
                , 'O3': '#fdae61'
-               , 'PM25': '#fee090'
+               , 'PM2.5': '#a50026'
                , 'PMCO': '#d6604d'
                , 'SO2': '#810f7c'
                , 'RH': '#abd9e9'
@@ -64,25 +64,19 @@ app.layout = html.Div([html.Div([html.H1('Correlaciones importantes entre contam
                                          style={'color': 'white', 'font-family': 'Helvetica', 'textAlign': 'center',
                                                 'background-color': 'midnightblue', 'line-height': '1.5',
                                                 'margin': '0%'})]),
-                       dcc.Dropdown(id='elegir_contaminante', options=opciones_contaminante, value='UVA'),
+                       html.Div([html.P('Selecciona el/los contaminantes:   ',
+                                        style={'font-family': 'Helvetica', 'height': '40px', 'width': '500px',
+                                       'display': 'table-cell', 'verticalAlign': 'middle', 'textAlign': 'left'}),
+                                dcc.Dropdown(id='elegir_contaminante', options=opciones_contaminante,
+                                    value=['PM2.5', 'PM10', 'O3'], multi=True,
+                                    placeholder="Contaminantes",  style={'font-family': 'Helvetica',
+                                                                         'height': '40px', 'width': '700px',
+                                                                         'display': 'inblock-line',
+                                                                         'verticalAlign': 'middle',
+                                                                         'horizontalAlign': 'right'})]),
                        dcc.Graph(id='correlaciones_o3'),
-                              #   figure={'data': data_o3,
-                              #           'layout': go.Layout(title='Correlaciones de O3 con otros contaminantes',
-                              #                               xaxis={'title': 'Horas'},
-                              #                               yaxis={'title': 'Correlación'}
-                              #                               )}),
-                       dcc.Graph(id='correlaciones_pm25',
-                                 figure={'data': data_pm25,
-                                         'layout': go.Layout(title='Correlaciones de PM2.5 con otros contaminantes',
-                                                             xaxis={'title': 'Horas'},
-                                                             yaxis={'title': 'Correlación'}
-                                                             )}),
-                       dcc.Graph(id='correlaciones_pm10',
-                                 figure={'data': data_pm10,
-                                         'layout': go.Layout(title='Correlaciones de PM10 con otros contaminantes',
-                                                             xaxis={'title': 'Horas'},
-                                                             yaxis={'title': 'Correlación'}
-                                                             )}),
+                       dcc.Graph(id='correlaciones_pm25'),
+                       dcc.Graph(id='correlaciones_pm10'),
                        html.Div(html.P('* Los resultados aquí mostrados son parte de un estudio de la calidad del '
                                        'aire de la Ciudad de México. Se muestran las correlaciones desde las 0 '
                                        'hasta las 72 horas de los tres contaminantes considerados para '
@@ -93,15 +87,34 @@ app.layout = html.Div([html.Div([html.H1('Correlaciones importantes entre contam
                        ])
 
 
-@app.callback(Output('correlaciones_o3', 'figure'),
+@app.callback([Output('correlaciones_o3', 'figure'),
+               Output('correlaciones_pm25', 'figure'),
+               Output('correlaciones_pm10', 'figure')],
               [Input('elegir_contaminante', 'value')])
 def actualizar(opciones_contaminante):
-    df_o3_filtro = df_o3[[opciones_contaminante]]
+    df_o3_filtro = df_o3[opciones_contaminante]
     data_o3_filtro = [crear_trazo(df_o3, col, dic_colores[col]) for col in df_o3_filtro.columns]
-    return {'data': data_o3_filtro,
-            'layout': go.Layout(title='Correlaciones de O3 con otros contaminantes',
+
+    df_pm25_filtro = df_pm25[opciones_contaminante]
+    data_pm25_filtro = [crear_trazo(df_pm25, col, dic_colores[col]) for col in df_pm25_filtro.columns]
+
+    df_pm10_filtro = df_pm10[opciones_contaminante]
+    data_pm10_filtro = [crear_trazo(df_pm10, col, dic_colores[col]) for col in df_pm10_filtro.columns]
+
+    figure1 = {'data': data_o3_filtro,
+               'layout': go.Layout(title='Correlaciones de O3 con otros contaminantes',
                                                              xaxis={'title': 'Horas'},
                                                              yaxis={'title': 'Correlación'})}
+    figure2 = {'data': data_pm25_filtro,
+               'layout': go.Layout(title='Correlaciones de PM2.5 con otros contaminantes',
+                                                             xaxis={'title': 'Horas'},
+                                                             yaxis={'title': 'Correlación'})}
+    figure3 = {'data': data_pm10_filtro,
+               'layout': go.Layout(title='Correlaciones de PM10 con otros contaminantes',
+                                                             xaxis={'title': 'Horas'},
+                                                             yaxis={'title': 'Correlación'})}
+
+    return figure1, figure2, figure3
 
 
 if __name__ == '__main__':

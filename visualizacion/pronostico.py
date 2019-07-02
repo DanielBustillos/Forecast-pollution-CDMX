@@ -5,7 +5,6 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
-
 # Dataframes que contienen las correlaciones entre PM2.5, O3, PM10 y demás contaminantes
 df = pd.read_csv("/home/pradel/Downloads/datos_pau.csv")
 df = df.sort_values(['fecha'], ascending=[0])

@@ -12,40 +12,26 @@ import re
 app = dash.Dash()
 
 # Importación y estructuración del dataframe
-dataframe = pd.read_csv("/home/pradel/Downloads/datos_pau.csv")
-df = dataframe[['fecha', 'O3_pronóstico', 'PM10_pronóstico', 'O3_y_frcst_12', 'PM10mean_y_frcst_12', 'O3_y', 'O3'
-                , 'O3_x', 'PM10', 'PM10_y', 'PM10_x', 'PM10mean_y']]
-df = df.sort_values(['fecha'], ascending=[0])
+dataframe = pd.read_csv("/home/pradel/Downloads/datos_pau.csv", parse_dates=['fecha'])
+df = dataframe[['fecha', 'O3_max', 'O3_predicted_historico', 'O3_predicted', 'PM10mean_max'
+                , 'PM10mean_predicted_historico', 'PM10mean_predicted']]
+df = df.sort_values(['fecha'], ascending=[1])
 
 # Diccionario de colores para cada contaminante
-dic_colores = {'O3_pronóstico': '#a50026'
-               , 'PM10_pronóstico': '#313695'
-               , 'O3_y_frcst_12': '#f46d43'
-               , 'PM10mean_y_frcst_12': '#74add1'
-               , 'TMP_x': '#80cdc1'
-               , 'TMP_y': '#003c30'
-               , 'O3_y': '#d73027'
-               , 'O3': '#fee090'
-               , 'O3_x': '#fdae61'
-               , 'RH': '#c51b7d'
-               , 'TMP': '#35978f'
-               , 'PM10': '#abd9e9'
-               , 'PM10_y': '#023858'
-               , 'PM10_x': '#e0f3f8'
-               , 'PM10mean_y': '#4575b4'}
+dic_colores = {'O3_predicted': '#a50026'
+               , 'PM10mean_predicted': '#313695'
+               , 'O3_predicted_historico': '#f46d43'
+               , 'PM10mean_predicted_historico': '#74add1'
+               , 'O3_max': '#d73027'
+               , 'PM10mean_max': '#023858'}
 
 # Diccionario de etiquetas para cada contaminante
-dic_etiquetas = {'O3_pronóstico': 'O3 pronóstico'
-                 , 'PM10_pronóstico': 'PM10 pronóstico'
-                 , 'O3_y_frcst_12': 'O3 pronóstico histórico'
-                 , 'PM10mean_y_frcst_12': 'PM10 pronóstico histórico'
-                 , 'O3_y': 'O3 máximo'
-                 , 'O3': 'O3 mínimo'
-                 , 'O3_x': 'O3 promedio'
-                 , 'PM10': 'PM10 promedio'
-                 , 'PM10_y': 'PM10 máximo'
-                 , 'PM10_x': 'PM10 mínimo'
-                 , 'PM10mean_y': 'PM10 promedio *'}
+dic_etiquetas = {'O3_predicted': 'O3 pronóstico'
+                 , 'PM10mean_predicted': 'PM10 pronóstico'
+                 , 'O3_predicted_historico': 'O3 pronóstico histórico'
+                 , 'PM10mean_predicted_historico': 'PM10 pronóstico histórico'
+                 , 'O3_max': 'O3 máximo'
+                 , 'PM10mean_max': 'PM10 máximo'}
 
 
 # Función que crea cada trazo, es decir una línea por contaminante y define si es sólida o punteada
@@ -81,14 +67,15 @@ app.layout = html.Div([html.Div([html.H1('Calidad del Aire',
                                         style={'font-family': 'Helvetica', 'height': '40px', 'width': '500px',
                                        'display': 'table-cell', 'verticalAlign': 'middle', 'textAlign': 'left'}),
                                 dcc.Dropdown(id='elegir_contaminante', options=opciones_contaminante,
-                                    value=['O3_y', 'O3_y_frcst_12', 'O3_pronóstico'
-                                           , 'PM10mean_y', 'PM10mean_y_frcst_12', 'PM10_pronóstico'], multi=True,
+                                    value=['O3_max', 'O3_predicted_historico', 'O3_predicted', 'PM10mean_max'
+                                           , 'PM10mean_predicted_historico', 'PM10mean_predicted'], multi=True,
                                     placeholder="Contaminantes",  style={'font-family': 'Helvetica',
                                                                          'display': 'inblock-line',
                                                                          'verticalAlign': 'middle',
                                                                          'horizontalAlign': 'right'})]),
                        dcc.Graph(id='pronostico'),
-                       html.Div(html.P('* PM10 calculado como el promedio cada 24 hrs.',
+                       html.Div(html.P('** Valores de O3 medidos en micro_gramo/metro cúbico y PM10 en ppb (partículas'
+                                       ' por billón)',
                                        style={'color': 'black', 'font-family': 'Helvetica', 'textAlign': 'right',
                                               'padding': 5, 'line-height': '1.0', 'font-size': 12}))
                        ])
@@ -120,7 +107,7 @@ def actualizar(opciones_contaminante):
                                                value='%Y-%m-%d %H')]
                                              ),
                                 yaxis=go.layout.YAxis(
-                                       title='ppm (partículas por millón)',
+                                       title='ppb - (micro gramo/metro cúbico)',
                                        dtick=25,
                                        range=[0, 155]),
                                 )}

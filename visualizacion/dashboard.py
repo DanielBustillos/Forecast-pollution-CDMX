@@ -84,6 +84,7 @@ app.layout = html.Div([html.Div([html.H1('Calidad del Aire',
 @app.callback(Output('pronostico', 'figure'),
               [Input('elegir_contaminante', 'value')])
 def actualizar(opciones_contaminante):
+    print(opciones_contaminante)
     df_filtro = df[opciones_contaminante]
     data_filtro = [crear_trazo(df, col, dic_etiquetas[col], dic_colores[col]) for col in df_filtro.columns]
 

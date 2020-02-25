@@ -2,7 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.pkl
+*.csv
+*.CSV
+*.PKL
 # C extensions
 *.so
 

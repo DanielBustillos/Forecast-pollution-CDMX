@@ -7,7 +7,9 @@ Se desarrollaron modelos para pronosticar los niveles de contaminación de la Ci
  - PM2.5 (en desarrollo)
  - Ozono
 
-Los datos de contaminación y metereología son obtenidos del [portal de la calidad de aire de la CDMX ](http://www.aire.cdmx.gob.mx/default.php)
+Los datos de contaminación y metereología son obtenidos del [portal de la calidad de aire de la CDMX ]
+
+(http://www.aire.cdmx.gob.mx/default.php)
 
 ### Pronóstico
 

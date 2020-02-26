@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/DanielBustillos/Pronostico-contaminacion-CDMX.svg?branch=master)](https://travis-ci.com/DanielBustillos/Pronostico-contaminacion-CDMX)
 
-.. |PythonVersion| image:: https://img.shields.io/pypi/pyversions/scikit-learn.svg
+[!PythonVersion](image:: https://img.shields.io/pypi/pyversions/scikit-learn.svg)
 .. _PythonVersion: https://img.shields.io/pypi/pyversions/scikit-learn.svg
 
 # Air Quality Forecast in the Metropolitan Area of   Mexico City

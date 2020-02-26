@@ -75,13 +75,13 @@ docs/_build/
 
 # PyBuilder
 target/
-
+*.DS_Store
 # Jupyter Notebook
 .ipynb_checkpoints
 
 # pyenv
 .python-version
-
+*.jupyterhub-proxy.pid
 # celery beat schedule file
 celerybeat-schedule
 

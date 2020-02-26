@@ -9,6 +9,7 @@ __pycache__/
 *.PKL
 # C extensions
 *.so
+
 /jupyterhub_cookie_secret
 /jupyterhub-proxy.pid
 /jupyterhub.sqlite

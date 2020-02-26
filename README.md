@@ -26,22 +26,24 @@ Pollution and meteorological data are obtained from the [CDMX air quality portal
 
 For each pollutant models were developed to forecast their levels up to 24 hours in advance, an error comparable to the literature was obtained.
 
-La siguiente gráfica muestra los valores reales y los pronosticados con 12 horas de antelación para el PM10:
+The following graph shows the actual and predicted values ​​12 hours in advance for the Ozone:
 
-![alt text](https://github.com/DanielBustillos/forecast-pollution-CDMX/blob/master/images/PM10.png?raw=true)
+![alt text](https://github.com/DanielBustillos/Pronostico-contaminacion-CDMX/blob/master/assets/o3_comparacion_02-07-2019%2012:38_.png?raw=true)
 
-Para el Ozono:
+- PM10 (24 hours Moving average):
 
-![alt text](https://github.com/DanielBustillos/forecast-pollution-CDMX/blob/master/images/O3.png?raw=true)
+![alt text](https://github.com/DanielBustillos/Pronostico-contaminacion-CDMX/blob/master/assets/o3_comparacion.png?raw=true)
 
 The mean RMSE is about 11.59%, the next graph shows the RSME by hour:
 
-![alt text](https://github.com/DanielBustillos/forecast-pollution-CDMX/blob/master/images/PM10.png?raw=true)
+![alt text](https://github.com/DanielBustillos/Pronostico-contaminacion-CDMX/blob/master/assets/scores.png?raw=true)
 
- 
+ For more info about the performance of the models, don't hesitate to contact me.
+
+
 ### Contributors
 
-* [Paulina Pradel](https://github.com/paupradel) visualization and web dashboard section.
+* [Paulina Pradel](https://github.com/paupradel) visualization and web dashboard.
 * [Daniel Bustillos](https://github.com/DanielBustillos) data analysis and modelling.
 
 
@@ -50,13 +52,13 @@ The mean RMSE is about 11.59%, the next graph shows the RSME by hour:
 * Machine Learning
 * Data Visualization
 * Predictive Modeling
-* etc.
 
 ### Technologies
 * Python
+* Scikit
 * Plotly
 * PostGres
-* Pandas, jupyter
+* Jupyter
 * HTML
 
 ## Getting Started
@@ -69,9 +71,9 @@ If you want to access the forecast it is suggested to visit the dashboard direct
     *If using offline data mention that and how they may obtain the data from the froup)*
 
 3. Data processing/transformation scripts are implemented in a data pipeline, to
-  run it, simply run in a terminal,:
+  run it, simply run in a terminal:
   ```
-But let's throw in a <b>tag</b>.
+
 ```
 
 ## Featured Notebooks/Analysis/Deliverables

@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.com/DanielBustillos/Pronostico-contaminacion-CDMX.svg?branch=master)](https://travis-ci.com/DanielBustillos/Pronostico-contaminacion-CDMX)
 
+.. |PythonVersion| image:: https://img.shields.io/pypi/pyversions/scikit-learn.svg
+.. _PythonVersion: https://img.shields.io/pypi/pyversions/scikit-learn.svg
+
 # Air Quality Forecast in the Metropolitan Area of   Mexico City
 
 This repository contains a set of machine learning models to forecast the pollutants in in the Metropolitan Area of   Mexico City. The models are optimized to obtain a low false positive rate according to the levels of the [environmental contingency program](http://www.aire.cdmx.gob.mx/default.php).

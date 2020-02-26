@@ -90,7 +90,7 @@ Team Leads (Contacts) : [Juan Daniel Bustillos Camargo](https://github.com/Danie
 
 |Name     |  Role   |
 |---------|-----------------|
-|[Norberto Morales](https://github.com/??)| Data Engineer |
+|Norberto Morales| Data Engineer |
 
 ## Contact
 * If you haven't joined the SF Brigade Slack, [you can do that here](http://c4sf.me/slack).  

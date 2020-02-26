@@ -66,15 +66,13 @@ The mean RMSE is about 11.59%, the next graph shows the RSME by hour:
 If you want to access the forecast it is suggested to visit the dashboard directly (soon). If you need to compute the forecast, it is enough to follow the following steps:
 
 1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
+2. Raw Data is being kept [here](https://github.com/DanielBustillos/Pronostico-contaminacion-CDMX/tree/master/datasets/por_hora) within this repo.
 
-    *If using offline data mention that and how they may obtain the data from the froup)*
 
-3. Data processing/transformation scripts are implemented in a data pipeline, to
-  run it, simply run in a terminal:
+3. The forecast and data processing/transformation scripts are implemented in a data pipeline, to run it, simply run in a terminal:
   ```
-
-```
+  python pipeline_general/pipeline/4_predicción.ipynb
+  ```
 
 ## Featured Notebooks/Analysis/Deliverables
 * [Narrativa de Calidad de Aire](https://github.com/paupradel/airecdmx_narrativa)
@@ -85,7 +83,7 @@ If you want to access the forecast it is suggested to visit the dashboard direct
 
 ## Contributing DSWG Members
 
-Team Leads (Contacts) : [Juan Daniel Bustillos Camargo](https://github.com/DanielBustillos)(@danielbc)
+Team Leads (Contacts) : [Juan Daniel Bustillos Camargo](https://github.com/DanielBustillos)(juandaniel.bucam@gmail.com)
 
 #### Other Members:
 

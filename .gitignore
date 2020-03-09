@@ -2,10 +2,17 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.pkl
+*.csv
+*.xls
+*.CSV
+*.PKL
 # C extensions
 *.so
 
+/jupyterhub_cookie_secret
+/jupyterhub-proxy.pid
+/jupyterhub.sqlite
 # Distribution / packaging
 .Python
 build/
@@ -68,13 +75,13 @@ docs/_build/
 
 # PyBuilder
 target/
-
+*.DS_Store
 # Jupyter Notebook
 .ipynb_checkpoints
 
 # pyenv
 .python-version
-
+*.jupyterhub-proxy.pid
 # celery beat schedule file
 celerybeat-schedule
 
@@ -102,3 +109,5 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+*.xls
+.DS_Store

@@ -4,8 +4,6 @@
 
 This repository contains a set of machine learning models to forecast the pollutants in in the Metropolitan Area of   Mexico City. The models are optimized to obtain a low false positive rate according to the levels of the [environmental contingency program](http://www.aire.cdmx.gob.mx/default.php).
 
-
-
 Models were developed to forecast pollution levels in Mexico City, the pollutants predicted are the following:
 
 Para cada contaminante se desarrollaron modelos para pronosticar sus niveles con hasta 24 horas de antelación, se obtuvo un error comparable a la bibliografía.
@@ -49,7 +47,6 @@ The following graph shows the actual and predicted values 12 hours in advance fo
 ### Contribuitors
 
 * [Paulina Pradel](https://github.com/paupradel) in the visualization and web dashboard section.
-=======
 The following graph shows the actual and predicted values ​​12 hours in advance for the Ozone:
 
 ![alt text](https://github.com/DanielBustillos/Pronostico-contaminacion-CDMX/blob/master/assets/o3_comparacion_02-07-2019%2012:38_.png?raw=true)
@@ -69,7 +66,6 @@ The mean RMSE is about 11.59%, the next graph shows the RSME by hour:
 
 * [Paulina Pradel](https://github.com/paupradel) visualization and web dashboard.
 * [Daniel Bustillos](https://github.com/DanielBustillos) data analysis and modelling.
->>>>>>> e0a87a6d4829dc74e5e286e47c4faee3538e762a
 
 
 ### Methods Used
@@ -107,7 +103,7 @@ The mean RMSE is about 11.59%, the next graph shows the RSME by hour:
 * [Notebook/Markdown/Slide Deck Title](link)
 * [Notebook/Markdown/Slide DeckTitle](link)
 * [Blog Post](link)
-=======
+
 
 ### Technologies
 * Python
@@ -135,8 +131,7 @@ If you want to access the forecast it is suggested to visit the dashboard direct
 * [Narrativa de Calidad de Aire](https://github.com/paupradel/airecdmx_narrativa)
 * [DashBoard de Calidad de Aire](https://github.com/paupradel/calidad_aire_cdmx)
 
-![tablero de calidad del aire](assets/tablero_scr.png)
->>>>>>> e0a87a6d4829dc74e5e286e47c4faee3538e762a
+![tablero de calidad del aire](assets/tablero_scr.png
 
 
 ## Contributing Members

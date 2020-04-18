@@ -156,5 +156,5 @@ Team Leads (Contacts) : [Juan Daniel Bustillos Camargo](https://github.com/Danie
 
 ## Contact
 * If you haven't joined the SF Brigade Slack, [you can do that here](http://c4sf.me/slack).  
->>>>>>> e0a87a6d4829dc74e5e286e47c4faee3538e762a
+
 * Feel free to contact team leads with any questions or if you are interested in contributing!

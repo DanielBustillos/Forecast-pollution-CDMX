@@ -8,13 +8,11 @@ This repository contains a set of machine learning models to forecast the pollut
 
 Models were developed to forecast pollution levels in Mexico City, the pollutants predicted are the following:
 
-<<<<<<< HEAD
 Para cada contaminante se desarrollaron modelos para pronosticar sus niveles con hasta 24 horas de antelación, se obtuvo un error comparable a la bibliografía.
-=======
+
   - PM10
   - PM2.5 (in development)
   - Ozone
->>>>>>> e0a87a6d4829dc74e5e286e47c4faee3538e762a
 
   There is a [dashboard of the project](https://github.com/paupradel/calidad_aire_cdmx), developed in the Repositories, Research and Prospective Coordination (CRIP) of the National Council of Science and Technology (CONACyT).
 
@@ -23,26 +21,15 @@ Para cada contaminante se desarrollaron modelos para pronosticar sus niveles con
 
 Pollution and meteorological data are obtained from the [CDMX air quality portal.](http://www.aire.cdmx.gob.mx/default.php)
 
-<<<<<<< HEAD
-### Ruta Crítica
-=======
->>>>>>> e0a87a6d4829dc74e5e286e47c4faee3538e762a
-
 #### -- Project Status: [On-Hold]
 
 ## Summary
 
 For each pollutant models were developed to forecast their levels up to 24 hours in advance, an error comparable to the literature was obtained.
 
-<<<<<<< HEAD
- - Mejorar el modelo usando otras variables no consideradas, por ejemplo, los incendios forestales o la emisión de ceniza volcánica.
-
-
 # Air Quality Forecast in the Metropolitan Area of ​​Mexico City
 
 This repository contains a set of machine learning models to forecast the pollutants in in the Metropolitan Area of ​​Mexico City. The models are optimized to obtain a low false positive rate according to the levels of the [environmental contingency program](http://www.aire.cdmx.gob.mx/default.php).
-
-
 
 Models were developed to forecast pollution levels in Mexico City, the pollutants predicted are the following:
 
@@ -50,10 +37,7 @@ Models were developed to forecast pollution levels in Mexico City, the pollutant
   - PM2.5 (in development)
   - Ozone
 
-
 Pollution and meteorological data are obtained from the [CDMX air quality portal.](http://www.aire.cdmx.gob.mx/default.php)
-
-
 
 #### -- Project Status: [On-Hold]
 
@@ -61,7 +45,6 @@ Pollution and meteorological data are obtained from the [CDMX air quality portal
 For each pollutant models were developed to forecast their levels up to 24 hours in advance, an error comparable to the literature was obtained.
 
 The following graph shows the actual and predicted values 12 hours in advance for PM10:
-
 
 ### Contribuitors
 
@@ -94,8 +77,6 @@ The mean RMSE is about 11.59%, the next graph shows the RSME by hour:
 * Machine Learning
 * Data Visualization
 * Predictive Modeling
-<<<<<<< HEAD
-* etc.
 
 ### Technologies
 * Python
@@ -145,6 +126,7 @@ If you want to access the forecast it is suggested to visit the dashboard direct
 
 
 3. The forecast and data processing/transformation scripts are implemented in a data pipeline, to run it, simply run in a terminal:
+
   ```
   python pipeline_general/pipeline/4_predicción.ipynb
   ```
@@ -157,17 +139,7 @@ If you want to access the forecast it is suggested to visit the dashboard direct
 >>>>>>> e0a87a6d4829dc74e5e286e47c4faee3538e762a
 
 
-## Contributing DSWG Members
-
-<<<<<<< HEAD
-**Team Leads (Contacts) : [Full Name](https://github.com/[github handle])(@slackHandle)**
-
-#### Other Members:
-
-|Name     |  Slack Handle   |
-|---------|-----------------|
-|[Full Name](https://github.com/[github handle])| @johnDoe        |
-|[Full Name](https://github.com/[github handle]) |     @janeDoe    |
+## Contributing Members
 
 ## Contact
 * If you haven't joined the SF Brigade Slack, [you can do that here](http://c4sf.me/slack).  

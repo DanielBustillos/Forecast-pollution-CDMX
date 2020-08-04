@@ -7,7 +7,6 @@ This repository contains a set of machine learning models to forecast the pollut
 Models were developed to forecast pollution levels in Mexico City, the pollutants predicted are the following:
 
 Para cada contaminante se desarrollaron modelos para pronosticar sus niveles con hasta 24 horas de antelación, se obtuvo un error comparable a la bibliografía.
-
   - PM10
   - PM2.5 (in development)
   - Ozone

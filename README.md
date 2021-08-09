@@ -91,10 +91,7 @@ The mean RMSE is about 11.59%, the next graph shows the RSME by hour:
 
     *If using offline data mention that and how they may obtain the data from the froup)*
 
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
-
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
+3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks) 
 
 5. Follow setup [instructions](Link to file)
 
@@ -108,7 +105,7 @@ The mean RMSE is about 11.59%, the next graph shows the RSME by hour:
 * Python
 * Scikit
 * Plotly
-* PostGres
+* PostgreSQL
 * Jupyter
 * HTML
 
@@ -148,7 +145,6 @@ Team Leads (Contacts) : [Juan Daniel Bustillos Camargo](https://github.com/Danie
 |---------|-----------------|
 |Norberto Morales| Data Engineer |
 
-## Contact
-* If you haven't joined the SF Brigade Slack, [you can do that here](http://c4sf.me/slack).  
+## Contact¡ 
 
 * Feel free to contact team leads with any questions or if you are interested in contributing!
